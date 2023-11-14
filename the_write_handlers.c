@@ -43,7 +43,7 @@ int handle_the_write_char(char r, char buffer[],
 					write(1, &buffer[0], 1));
 	}
 
-	return (write(1, buffer[0], 1));
+	return (write(1, &buffer[0], 1));
 }
 
 /****************** WRITE NUMBER ******************/
@@ -69,7 +69,7 @@ int write_the_number(int it_is_negative, int innd, char buffer[],
 
 	UNUSED(size);
 
-	if ((flags & F_ZERO) && !(flags & _MINUS))
+	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		paddd = '0';
 	if (it_is_negative)
 		extra_r = '-';
@@ -133,7 +133,7 @@ int write_the_num(int innd, char buffer[],
 		{
 			if (extra_r)
 				buffer[--paddd_start] = extra_r;
-			return (write(1, &buffer[paddd_start], i - paddd_start) +
+			return (write(1, &buffer[paddd_start], y - paddd_start) +
 				write(1, &buffer[innd], length - (1 - paddd_start)));
 		}
 	}

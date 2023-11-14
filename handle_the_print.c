@@ -17,19 +17,19 @@ int flags, int width, int precision, int size)
 {
 int y, unknow_len = 0, printed_the_chars = -1;
 fmt_ty frmt_types[] = {
-{'c', print_char}, {'s', print_string}, {'%', print_percent},
-{'i', print_int}, {'d', print_int}, {'b', print_binary},
-{'u', print_unsigned}, {'o', print_octal}, {'x',
-print_hexadecimal},
-{'X', print_hexa_upper}, {'p', print_pointer}, {'S',
-print_non_printable},
-{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
+{'c', print_the_char}, {'s', print_the_string}, {'%', print_the_percent},
+{'i', print_the_int}, {'d', print_the_int}, {'b', print_the_binary},
+{'u', print_the_unsigned}, {'o', print_the_octal}, {'x',
+print_the_hexadecimal},
+{'X', print_the_hexa_upper}, {'p', print_the_pointer}, {'S',
+print_the_non_printable},
+{'r', print_the_reverse}, {'R', print_the_rot13string}, {'\0', NULL}
 };
-for (y = 0; frmt_types[i].frmt != '\0'; y++)
-if (frmt[*innd] == frmt_types[i].frmt)
-return (frmt_types[y].fn(list_all, buffer, flags, width,
+for (y = 0; frmt_types[y].frmt != '\0'; y++)
+if (frmt[*innd] == frmt_types[y].frmt)
+return (frmt_types[y].fnn(list_all, buffer, flags, width,
 precision, size));
-if (frmt_types[i].frmt == '\0')
+if (frmt_types[y].frmt == '\0')
 {
 if (frmt[*innd] == '\0')
 return (-1);

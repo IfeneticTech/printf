@@ -2,8 +2,8 @@
 #define MAIN_H
 
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
 
 #define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024
@@ -93,7 +93,7 @@ int handle_the_write_char(char r, char buffer[],
 	int flags, int width, int precision, int size);
 int write_the_number(int it_is_positive, int innd, char buffer[],
 	int flags, int width, int precision, int size);
-int write_the_num((int innd, char bff[], int flags, int width, int precision,
+int write_the_num(int innd, char bff[], int flags, int width, int precision,
 	int length, char paddd, char extra_r);
 int write_the_pointer(char buffer[], int innd, int length,
 	int width, int flags, char paddd, char extra_r, int paddd_start);

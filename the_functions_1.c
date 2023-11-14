@@ -24,7 +24,7 @@ int print_the_unsigned(va_list types_all, char buffer[],
 	if (num == 0)
 		buffer[y--] = '\0';
 
-	buffer[BUFFER_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
 	{
@@ -64,7 +64,7 @@ int print_the_octal(va_list types_all, char buffer[],
 	if (num == 0)
 		buffer[y--] = '0';
 
-	buffer[BFFER_SIZE - 1] = '\0';
+	buffer[BUFF_SIZE - 1] = '\0';
 
 	while (num > 0)
 	{
@@ -72,7 +72,7 @@ int print_the_octal(va_list types_all, char buffer[],
 		num /= 8;
 	}
 
-	if (flaggs & F_HASH && init_num != 0)
+	if (flags & F_HASH && init_num != 0)
 		buffer[y--] = '0';
 
 	y++;
@@ -169,3 +169,4 @@ int print_the_hexa(va_list types_all, char map_to[], char buffer[],
 	y++;
 
 	return (write_the_unsgnd(0, y, buffer, flags, width, precision, size));
+}
